@@ -13,12 +13,14 @@ android {
 
     defaultConfig {
         applicationId "com.project.imageapp"
-        minSdkVersion 21
-        targetSdkVersion 30
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "UNSPLASH_ACCESS_KEY", unsplash_access_key)
     }
 
     buildTypes {
@@ -72,4 +74,8 @@ dependencies {
 
     // Paging 3
     implementation "androidx.paging:paging-runtime:$pagingVersion"
+}
+
+kapt {
+    correctErrorTypes true
 }
